@@ -13,7 +13,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "YAGui", "YAGui\YAGui.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FFmpegYAGuiDroidCapture", "FFmpegYAGuiDroidCapture\FFmpegYAGuiDroidCapture.vcxproj", "{41CD1355-F4AE-4263-A90A-0D427CED1A52}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FFmpegYAGuiDroidCapture_1", "FFmpegYAGuiDroidCapture_1\FFmpegYAGuiDroidCapture_1.vcxproj", "{41CD1355-F4AE-4263-A90A-0D427CED1A53}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FFmpegYAGuiDroidCapture_Orientation", "FFmpegYAGuiDroidCapture_Orientation\FFmpegYAGuiDroidCapture_Orientation.vcxproj", "{41CD1355-F4AE-4263-A90A-0D427CED1A53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
