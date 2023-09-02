@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{41CD1355-F4AE-4263-A90A-0D427CED1A54}</ProjectGuid>
+    <RootNamespace>06_FFmpeg_YAGuiDroidCapture_PacketQueue</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <CustomBuildAfterTargets>
+    </CustomBuildAfterTargets>
+    <CustomBuildBeforeTargets>
+    </CustomBuildBeforeTargets>
+    <PreBuildEventUseInBuild>true</PreBuildEventUseInBuild>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>include;$(SolutionDir)../external-deps/GLFW/include;$(SolutionDir)../external-deps/GLM;$(SolutionDir)../external-deps/ffmpeg/4.3.1/$(PlatformTarget)/include;$(SolutionDir)../external-deps/glad_3.3/include;$(SolutionDir)../external-deps/freetype2/include;$(SolutionDir)../external-deps/stb/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>STB_IMAGE_WRITE_IMPLEMENTATION;STB_IMAGE_WRITE_STATIC;STB_IMAGE_IMPLEMENTATION;USE_YAGUI;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;_MBCS;_WINSOCK_DEPRECATED_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)../external-deps/GLFW/lib-vc2015;$(SolutionDir)../external-deps/ffmpeg/4.3.1/$(PlatformTarget)/lib;$(SolutionDir)../external-deps/freetype2/lib/windows/$(PlatformTarget);$(SolutionDir)../external-deps/glew-1.9.0-win32/glew-1.9.0/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>freetype245.lib;glew32.lib;opengl32.lib;glfw3.lib;avformat.lib;avcodec.lib;avutil.lib;swscale.lib;avdevice.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+    </CustomBuildStep>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>call cd $(ProjectDir)DroidServer 
+call __MakeRemoteClient.bat</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Buffer\BufferedStream.cpp" />
+    <ClCompile Include="src\Buffer\BufferedStreamReader.cpp" />
+    <ClCompile Include="src\Buffer\BufferedStreamWriter.cpp" />
+    <ClCompile Include="src\Common\CCString.cpp" />
+    <ClCompile Include="src\Common\Image.cpp" />
+    <ClCompile Include="src\Common\Pixel.cpp" />
+    <ClCompile Include="src\Common\RandomAccessFile.cpp" />
+    <ClCompile Include="src\Common\Sprite.cpp" />
+    <ClCompile Include="src\Common\TGA.cpp" />
+    <ClCompile Include="src\Engine\GameEngine.cpp" />
+    <ClCompile Include="src\Engine\InputManager.cpp" />
+    <ClCompile Include="src\Engine\Texture.cpp" />
+    <ClCompile Include="src\Engine\Timer.cpp" />
+    <ClCompile Include="src\Engine\UI\TTFFontEncoder.cpp" />
+    <ClCompile Include="src\Engine\UI\WButton.cpp" />
+    <ClCompile Include="src\Engine\UI\WCanvas.cpp" />
+    <ClCompile Include="src\Engine\UI\WCheckbox.cpp" />
+    <ClCompile Include="src\Engine\UI\WComboBox.cpp" />
+    <ClCompile Include="src\Engine\UI\WComponent.cpp" />
+    <ClCompile Include="src\Engine\UI\WComponentFactory.cpp" />
+    <ClCompile Include="src\Engine\UI\WConsoleLog.cpp" />
+    <ClCompile Include="src\Engine\UI\WContainer.cpp" />
+    <ClCompile Include="src\Engine\UI\WDummy.cpp" />
+    <ClCompile Include="src\Engine\UI\WFrame.cpp" />
+    <ClCompile Include="src\Engine\UI\WGraph.cpp" />
+    <ClCompile Include="src\Engine\UI\WInspector.cpp" />
+    <ClCompile Include="src\Engine\UI\WInspectorTab.cpp" />
+    <ClCompile Include="src\Engine\UI\WListBox.cpp" />
+    <ClCompile Include="src\Engine\UI\WScrollbar.cpp" />
+    <ClCompile Include="src\Engine\UI\WSlider.cpp" />
+    <ClCompile Include="src\Engine\UI\WSprite.cpp" />
+    <ClCompile Include="src\Engine\UI\WStatic.cpp" />
+    <ClCompile Include="src\Engine\UI\WTabbedPane.cpp" />
+    <ClCompile Include="src\Engine\UI\WTable.cpp" />
+    <ClCompile Include="src\Engine\UI\WTextBox.cpp" />
+    <ClCompile Include="src\Engine\UI\WTextField.cpp" />
+    <ClCompile Include="src\Engine\UI\WTree.cpp" />
+    <ClCompile Include="src\Engine\UI\WWidgetManager.cpp" />
+    <ClCompile Include="src\Engine\UI\WWindow.cpp" />
+    <ClCompile Include="src\FFmpeg\FFmpeg.cpp" />
+    <ClCompile Include="src\glad.c" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Network\NetBase.cpp" />
+    <ClCompile Include="src\Network\NetClient.cpp" />
+    <ClCompile Include="src\Network\NetServer.cpp" />
+    <ClCompile Include="src\QRCode\QrCode.cpp" />
+    <ClCompile Include="src\Renderer\Graphics.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Buffer\BufferData.hpp" />
+    <ClInclude Include="include\Buffer\BufferedStream.h" />
+    <ClInclude Include="include\Buffer\BufferedStreamReader.h" />
+    <ClInclude Include="include\Buffer\BufferedStreamWriter.h" />
+    <ClInclude Include="include\Common\CCString.h" />
+    <ClInclude Include="include\Common\Defines.h" />
+    <ClInclude Include="include\Common\Image.h" />
+    <ClInclude Include="include\Common\Object.hpp" />
+    <ClInclude Include="include\Common\ObjectPool.hpp" />
+    <ClInclude Include="include\Common\ObjectQueue.hpp" />
+    <ClInclude Include="include\Common\Pixel.h" />
+    <ClInclude Include="include\Common\RandomAccessFile.h" />
+    <ClInclude Include="include\Common\Singleton.h" />
+    <ClInclude Include="include\Common\Sprite.h" />
+    <ClInclude Include="include\Common\TGA.h" />
+    <ClInclude Include="include\Engine\GameEngine.h" />
+    <ClInclude Include="include\Engine\InputManager.h" />
+    <ClInclude Include="include\Engine\Texture.h" />
+    <ClInclude Include="include\Engine\Timer.h" />
+    <ClInclude Include="include\Engine\UI\StringUtil.h" />
+    <ClInclude Include="include\Engine\UI\TTFFontEncoder.h" />
+    <ClInclude Include="include\Engine\UI\UIDefines.h" />
+    <ClInclude Include="include\Engine\UI\WButton.h" />
+    <ClInclude Include="include\Engine\UI\WCanvas.h" />
+    <ClInclude Include="include\Engine\UI\WCheckbox.h" />
+    <ClInclude Include="include\Engine\UI\WComboBox.h" />
+    <ClInclude Include="include\Engine\UI\WComponent.h" />
+    <ClInclude Include="include\Engine\UI\WComponentFactory.h" />
+    <ClInclude Include="include\Engine\UI\WConsoleLog.h" />
+    <ClInclude Include="include\Engine\UI\WContainer.h" />
+    <ClInclude Include="include\Engine\UI\WDummy.h" />
+    <ClInclude Include="include\Engine\UI\WFrame.h" />
+    <ClInclude Include="include\Engine\UI\WGraph.h" />
+    <ClInclude Include="include\Engine\UI\widgetdef.h" />
+    <ClInclude Include="include\Engine\UI\WInspector.h" />
+    <ClInclude Include="include\Engine\UI\WInspectorTab.h" />
+    <ClInclude Include="include\Engine\UI\WListBox.h" />
+    <ClInclude Include="include\Engine\UI\WScrollbar.h" />
+    <ClInclude Include="include\Engine\UI\WSlider.h" />
+    <ClInclude Include="include\Engine\UI\WSprite.h" />
+    <ClInclude Include="include\Engine\UI\WStatic.h" />
+    <ClInclude Include="include\Engine\UI\WTabbedPane.h" />
+    <ClInclude Include="include\Engine\UI\WTable.h" />
+    <ClInclude Include="include\Engine\UI\WTextBox.h" />
+    <ClInclude Include="include\Engine\UI\WTextField.h" />
+    <ClInclude Include="include\Engine\UI\WTree.h" />
+    <ClInclude Include="include\Engine\UI\WWidgetManager.h" />
+    <ClInclude Include="include\Engine\UI\WWindow.h" />
+    <ClInclude Include="include\FFmpeg\FFmpeg.h" />
+    <ClInclude Include="include\Network\NetBase.h" />
+    <ClInclude Include="include\Network\NetClient.h" />
+    <ClInclude Include="include\Network\NetDefines.h" />
+    <ClInclude Include="include\Network\NetServer.h" />
+    <ClInclude Include="include\QRCode\QrCode.hpp" />
+    <ClInclude Include="include\Renderer\Graphics.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DroidServer\0. JavaToAidl.bat" />
+    <None Include="DroidServer\1. CompileSource.bat" />
+    <None Include="DroidServer\2. DexIt.bat" />
+    <None Include="DroidServer\3. PackageAnAPK.bat" />
+    <None Include="DroidServer\3. PackageInAJar.bat" />
+    <None Include="DroidServer\4. PushToDevice.bat" />
+    <None Include="DroidServer\5. Executing.bat" />
+    <None Include="DroidServer\6. CopyClientToDest.bat" />
+    <None Include="DroidServer\aidl\android\content\IOnPrimaryClipChangedListener.aidl" />
+    <None Include="DroidServer\aidl\android\view\IRotationWatcher.aidl" />
+    <None Include="DroidServer\com\ea\remotecontrol\reflection\WindowManager.java" />
+    <None Include="DroidServer\java\android\content\IOnPrimaryClipChangedListener.java" />
+    <None Include="DroidServer\java\android\view\IRotationWatcher.java" />
+    <None Include="DroidServer\java\com\ea\remotecontrol\common\Device.java" />
+    <None Include="DroidServer\java\com\ea\remotecontrol\common\DisplayInfo.java" />
+    <None Include="DroidServer\java\com\ea\remotecontrol\common\IO.java" />
+    <None Include="DroidServer\java\com\ea\remotecontrol\common\LogD.java" />
+    <None Include="DroidServer\java\com\ea\remotecontrol\common\ScreenEncoder.java" />
+    <None Include="DroidServer\java\com\ea\remotecontrol\common\Size.java" />
+    <None Include="DroidServer\java\com\ea\remotecontrol\reflection\DisplayManager.java" />
+    <None Include="DroidServer\java\com\ea\remotecontrol\reflection\InputManager.java" />
+    <None Include="DroidServer\java\com\ea\remotecontrol\reflection\PowerManager.java" />
+    <None Include="DroidServer\java\com\ea\remotecontrol\reflection\ServiceManager.java" />
+    <None Include="DroidServer\java\com\ea\remotecontrol\reflection\SurfaceManager.java" />
+    <None Include="DroidServer\java\com\ea\remotecontrol\reflection\WindowManager.java" />
+    <None Include="DroidServer\java\com\ea\remotecontrol\RemoteClient.java" />
+    <None Include="DroidServer\java\com\ea\remotecontrol\RemoteServer.java" />
+    <None Include="DroidServer\java\com\ea\remotecontrol\TestServer.java" />
+    <None Include="DroidServer\java\com\ea\remotecontrol\TestServerTest.java" />
+    <None Include="DroidServer\java\com\genymobile\scrcpy\Server.java" />
+    <None Include="DroidServer\MakeMyScrcpy.bat" />
+    <None Include="DroidServer\_BuildInternalClient.bat" />
+    <None Include="DroidServer\_BuildInternalServer.bat" />
+    <None Include="DroidServer\_MakeTestServer.bat" />
+    <None Include="DroidServer\__MakeGenymotionServer.bat" />
+    <None Include="DroidServer\__MakeRemoteClient.bat" />
+    <None Include="DroidServer\__MakeRemoteServer.bat" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
